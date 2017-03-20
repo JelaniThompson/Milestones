@@ -8,7 +8,27 @@ using namespace std;
 
 // Draw a diagram of the problem
 namespace ict{
-	void Date::errCode(int errorCode) {
+
+	// Constructors
+	Date::Date() {
+		m_dateOnly = false;
+		set();
+	}
+	Date::Date() {
+
+	}
+	Date::Date(int year, int mon, int day, int hour, int min) {
+		// Default value of zero so constructor works with four arguments as well
+		min = 0;
+
+		m_year = year;
+		m_mon = mon;
+		m_day = day;
+		m_hour = hour;
+		m_min = min;
+	}
+
+ 	void Date::errCode(int errorCode) {
 		switch (errorCode) {
 			case 0:
 				errorCode = NO_ERROR;
